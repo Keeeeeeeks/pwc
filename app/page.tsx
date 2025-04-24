@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from './styles/home.module.css';
-import { instrumentSans } from './fonts';
+//import { instrumentSans } from './fonts';
 
 export default function Home() {
   // Add your prototypes to this array
@@ -25,6 +25,11 @@ export default function Home() {
       description: 'A maximalist gratitude journal that celebrates your daily moments of joy and gratitude',
       path: '/prototypes/todays-joy'
     },
+    {
+      title: 'Click Dynasty',
+      description: 'A competitive clicking game where players advance through Bronze, Silver, and Gold leagues',
+      path: '/prototypes/click-dynasty'
+    },
     // Add your new prototypes here like this:
     // {
     //   title: 'Your new prototype',
@@ -34,7 +39,7 @@ export default function Home() {
   ];
 
   return (
-    <div className={`${styles.container} ${instrumentSans.className}`}>
+    <div className={styles.container}>
       <header className={styles.header}>
         <h1>Keeks's prototypes</h1>
       </header>

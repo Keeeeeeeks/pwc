@@ -47,4 +47,34 @@
   font-size: 0.9rem;
   opacity: 0.8;
   line-height: 1.6;
+}
+
+.skeleton {
+  pointer-events: none;
+}
+
+.skeletonTitle {
+  height: 1.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 60%;
+}
+
+.skeletonDescription {
+  height: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  width: 100%;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.skeleton .skeletonTitle,
+.skeleton .skeletonDescription {
+  animation: pulse 1.5s ease-in-out infinite;
 } 
