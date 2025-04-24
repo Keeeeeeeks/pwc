@@ -1,0 +1,163 @@
+.readerContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.readerHeader {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: #3a0ca3;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.backButton:hover {
+  color: #4361ee;
+}
+
+.readerHeader h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.authorName {
+  color: #666;
+  font-style: italic;
+  margin: 0.3rem 0 0 0;
+}
+
+.contentArea {
+  padding: 2rem;
+  min-height: 400px;
+  background-color: #fdfdfd;
+  border-bottom: 1px solid #eee;
+}
+
+.pageContent {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #333;
+  min-height: 300px;
+}
+
+.chapterTitle {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+.paragraphText {
+  margin-bottom: 1.5rem;
+}
+
+.pageNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.navButton {
+  background-color: #3a0ca3;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover:not(.disabled) {
+  background-color: #4361ee;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageIndicator {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.commentsSection {
+  padding: 2rem;
+}
+
+.commentsTitle {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.commentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.commentCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.commentHeader {
+  margin-bottom: 0.8rem;
+}
+
+.userName {
+  font-weight: bold;
+  color: #333;
+}
+
+.commentText {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .readerContainer {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .readerHeader {
+    padding: 1rem 1.5rem;
+  }
+  
+  .contentArea, .commentsSection {
+    padding: 1.5rem;
+  }
+  
+  .readerHeader h2 {
+    font-size: 1.6rem;
+  }
+  
+  .pageContent {
+    font-size: 1rem;
+  }
+} 

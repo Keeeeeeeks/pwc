@@ -15,6 +15,16 @@ export default function Home() {
       description: 'An interactive button that creates a colorful confetti explosion',
       path: '/prototypes/confetti-button'
     },
+    {
+      title: 'Interactive Bookshelf',
+      description: 'A responsive bookshelf with animated book cards and an immersive reading interface',
+      path: '/prototypes/interactive-bookshelf'
+    },
+    {
+      title: "Today's Joy",
+      description: 'A maximalist gratitude journal that celebrates your daily moments of joy and gratitude',
+      path: '/prototypes/todays-joy'
+    },
     // Add your new prototypes here like this:
     // {
     //   title: 'Your new prototype',
@@ -26,7 +36,7 @@ export default function Home() {
   return (
     <div className={`${styles.container} ${instrumentSans.className}`}>
       <header className={styles.header}>
-        <h1>Elizabeth's prototypes</h1>
+        <h1>Keeks's prototypes</h1>
       </header>
 
       <main>
