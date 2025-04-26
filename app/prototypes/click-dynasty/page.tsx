@@ -330,6 +330,7 @@ export default function ClickDynasty() {
                       <LeaderboardClass
                         className={className}
                         players={leaderboard[className]}
+                        currentClass={currentClass}
                       />
                     </div>
                   </motion.div>

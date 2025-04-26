@@ -3,6 +3,25 @@
   margin: 0 auto;
   padding: 2rem;
   min-height: 100vh;
+  background-color: #e0e5ec;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.neuContainer {
+  background-color: #e0e5ec;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 
+    20px 20px 60px #bec3c9,
+    -20px -20px 60px #ffffff;
+}
+
+.neuReader {
+  background-color: #e0e5ec;
+  border-radius: 20px;
+  box-shadow: 
+    20px 20px 60px #bec3c9,
+    -20px -20px 60px #ffffff;
 }
 
 .header {
@@ -12,7 +31,21 @@
 
 .header h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #2d3436;
+}
+
+.neuTitle {
+  color: #2d3436;
+  text-shadow: 1px 1px 1px #fff;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  background: #e0e5ec;
+  box-shadow: 
+    inset 2px 2px 5px #ffffff,
+    inset -2px -2px 5px #bec3c9;
 }
 
 .main {
@@ -29,5 +62,13 @@
   
   .header h1 {
     font-size: 2rem;
+  }
+  
+  .neuContainer,
+  .neuReader {
+    border-radius: 15px;
+    box-shadow: 
+      10px 10px 30px #bec3c9,
+      -10px -10px 30px #ffffff;
   }
 } 

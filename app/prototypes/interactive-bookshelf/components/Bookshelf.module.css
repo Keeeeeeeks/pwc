@@ -12,17 +12,28 @@
 .bookCard {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  border-radius: 12px;
+  background-color: #e0e5ec;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    9px 9px 16px #bec3c9,
+    -9px -9px 16px #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
+}
+
+.bookCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    12px 12px 20px #bec3c9,
+    -12px -12px 20px #ffffff;
 }
 
 .bookCover {
   height: 250px;
   overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .bookCover img {
@@ -46,37 +57,51 @@
 .bookInfo h3 {
   margin: 0 0 0.5rem 0;
   font-size: 1.4rem;
-  color: #333;
+  color: #2d3436;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .author {
-  color: #666;
+  color: #636e72;
   font-style: italic;
   margin: 0 0 1rem 0;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .description {
-  color: #444;
+  color: #636e72;
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
   flex-grow: 1;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .readButton {
-  background-color: #3a0ca3;
-  color: white;
+  background-color: #e0e5ec;
+  color: #6c5ce7;
   border: none;
   padding: 0.8rem 1.5rem;
-  border-radius: 30px;
+  border-radius: 50px;
   font-weight: 600;
   cursor: pointer;
   align-self: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    6px 6px 12px #bec3c9,
+    -6px -6px 12px #ffffff;
   transition: all 0.2s ease;
+  position: relative;
 }
 
 .readButton:hover {
-  background-color: #4361ee;
+  box-shadow: 
+    inset 4px 4px 8px #bec3c9,
+    inset -4px -4px 8px #ffffff;
+}
+
+.readButton:active {
+  box-shadow: 
+    inset 6px 6px 12px #bec3c9,
+    inset -6px -6px 12px #ffffff;
 }
 
 /* Responsive adjustments */

@@ -1,112 +1,239 @@
 .readerContainer {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #e0e5ec;
+  border-radius: 24px;
+  box-shadow: 
+    10px 10px 30px #bec3c9,
+    -10px -10px 30px #ffffff;
   overflow: hidden;
-}
-
-.readerHeader {
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid #eee;
   position: relative;
 }
 
+.glassHeader {
+  padding: 1.5rem 2rem;
+  background: rgba(224, 229, 236, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(190, 195, 201, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.bookInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bookIcon {
+  font-size: 1.8rem;
+  color: #6c5ce7;
+  line-height: 1;
+  text-shadow: 1px 1px 1px #ffffff;
+}
+
 .backButton {
-  background: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #e0e5ec;
   border: none;
-  color: #3a0ca3;
+  color: #6c5ce7;
   font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  padding: 0.5rem 0;
-  margin-bottom: 1rem;
-  display: inline-block;
-  transition: color 0.3s ease;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 
+    6px 6px 12px #bec3c9,
+    -6px -6px 12px #ffffff;
 }
 
 .backButton:hover {
-  color: #4361ee;
+  box-shadow: 
+    inset 4px 4px 8px #bec3c9,
+    inset -4px -4px 8px #ffffff;
 }
 
 .readerHeader h2 {
   margin: 0;
   font-size: 1.8rem;
-  color: #333;
+  color: #2d3436;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .authorName {
-  color: #666;
+  color: #636e72;
   font-style: italic;
   margin: 0.3rem 0 0 0;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .contentArea {
   padding: 2rem;
   min-height: 400px;
-  background-color: #fdfdfd;
-  border-bottom: 1px solid #eee;
+  max-height: calc(100vh - 300px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #6c5ce7 transparent;
+  background: #e0e5ec;
+  box-shadow: inset 2px 2px 5px #bec3c9, inset -2px -2px 5px #ffffff;
+  border-radius: 10px;
+  margin: 1rem;
+  perspective: 1200px;
+}
+
+.contentArea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.contentArea::-webkit-scrollbar-thumb {
+  background-color: #6c5ce7;
+  border-radius: 3px;
 }
 
 .pageContent {
   line-height: 1.8;
   font-size: 1.1rem;
-  color: #333;
-  min-height: 300px;
+  color: #2d3436;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  min-height: 350px;
+  padding: 1rem;
+  background: #e0e5ec;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .chapterTitle {
-  font-size: 1.5rem;
-  color: #222;
+  font-size: 1.6rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2d3436;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .paragraphText {
-  margin-bottom: 1.5rem;
+  text-indent: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.pageNavigation {
+.playerBar {
+  background: rgba(224, 229, 236, 0.9);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(190, 195, 201, 0.5);
+  padding: 1.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.progressSlider {
+  width: 100%;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #bec3c9;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.progressSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #6c5ce7;
+  border-radius: 50%;
+  border: 2px solid #e0e5ec;
+  box-shadow: 2px 2px 4px #bec3c9, -2px -2px 4px #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.progressSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.pageInfo {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
+  font-size: 0.8rem;
+  color: #636e72;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
-.navButton {
-  background-color: #3a0ca3;
-  color: white;
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.controlButton {
+  background: #e0e5ec;
   border: none;
-  padding: 0.7rem 1.2rem;
-  border-radius: 30px;
-  font-weight: 500;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  color: #6c5ce7;
+  font-size: 1.2rem;
   transition: all 0.2s ease;
+  box-shadow: 
+    6px 6px 12px #bec3c9,
+    -6px -6px 12px #ffffff;
 }
 
-.navButton:hover:not(.disabled) {
-  background-color: #4361ee;
+.controlButton:hover:not(:disabled) {
+  box-shadow: 
+    inset 4px 4px 8px #bec3c9,
+    inset -4px -4px 8px #ffffff;
 }
 
-.disabled {
+.controlButton:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.pageIndicator {
-  color: #666;
-  font-size: 0.9rem;
+.controlButton .icon {
+  font-size: 1.4rem;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .commentsSection {
   padding: 2rem;
+  background: #e0e5ec;
+  border-top: 1px solid rgba(190, 195, 201, 0.5);
 }
 
 .commentsTitle {
   margin: 0 0 1.5rem 0;
   font-size: 1.4rem;
-  color: #333;
+  color: #2d3436;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .commentsList {
@@ -116,10 +243,13 @@
 }
 
 .commentCard {
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  background: #e0e5ec;
+  border-radius: 12px;
   padding: 1.2rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 
+    6px 6px 12px #bec3c9,
+    -6px -6px 12px #ffffff;
+  margin-bottom: 1rem;
 }
 
 .commentHeader {
@@ -128,36 +258,35 @@
 
 .userName {
   font-weight: bold;
-  color: #333;
+  color: #2d3436;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 .commentText {
   margin: 0;
-  color: #555;
+  color: #636e72;
   line-height: 1.5;
+  text-shadow: 1px 1px 1px #ffffff;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .readerContainer {
-    max-width: 100%;
     border-radius: 0;
-    box-shadow: none;
+    max-width: 100%;
   }
   
-  .readerHeader {
-    padding: 1rem 1.5rem;
-  }
-  
-  .contentArea, .commentsSection {
+  .contentArea {
     padding: 1.5rem;
+    margin: 0.5rem;
   }
   
-  .readerHeader h2 {
-    font-size: 1.6rem;
+  .playerBar {
+    padding: 1rem;
   }
-  
-  .pageContent {
-    font-size: 1rem;
-  }
+} 
+
+.icon {
+  display: inline-block;
+  font-size: 1.2rem;
 } 

@@ -64,8 +64,19 @@ const books = [
   },
 ];
 
+// Define Book type to fix type error
+interface Book {
+  id: string;
+  title: string;
+  author: string;
+  cover: string;
+  description: string;
+  content: string[];
+  comments: { user: string; text: string; }[];
+}
+
 export default function InteractiveBookshelf() {
-  const [selectedBook, setSelectedBook] = useState(null);
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   
   return (
     <div className={styles.container}>
@@ -77,6 +88,7 @@ export default function InteractiveBookshelf() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
+            className={styles.neuReader}
           >
             <BookReader 
               book={selectedBook} 
@@ -90,12 +102,14 @@ export default function InteractiveBookshelf() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
+            className={styles.neuContainer}
           >
             <header className={styles.header}>
               <motion.h1 
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, type: "spring" }}
+                className={styles.neuTitle}
               >
                 Interactive Bookshelf
               </motion.h1>
